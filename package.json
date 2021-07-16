@@ -1,0 +1,43 @@
+{
+    "name": "cabul",
+    "version": "0.0.14",
+    "description": "Reddit hentai aggregator",
+    "main": "lib/index.js",
+    "files": [
+        "lib/**/*"
+    ],
+    "scripts": {
+        "test": "node lib/index.js",
+        "build": "tsc",
+        "format": "prettier --write \"src/**/*.ts\"",
+        "lint": "tslint -p tsconfig.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sinkaroid/cabul.git"
+    },
+    "keywords": [
+        "wrapper",
+        "reddit",
+        "nsfw",
+        "hentai",
+        "porn"
+    ],
+    "author": "sinkaroid",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/sinkaroid/cabul/issues"
+    },
+    "homepage": "https://github.com/sinkaroid/cabul#readme",
+    "dependencies": {
+        "node-fetch": "^2.6.0",
+        "query-string": "^6.12.1"
+    },
+    "devDependencies": {
+        "@types/node-fetch": "^2.5.7",
+        "prettier": "^2.0.5",
+        "tslint": "^6.1.1",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "^3.8.3"
+    }
+}

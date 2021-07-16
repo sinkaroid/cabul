@@ -1,0 +1,643 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>cabul</title>
+	<meta name="description" content="Documentation for cabul">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">cabul</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>cabul</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<div align="center">
+					<p><a href="https://www.npmjs.com/package/cabul"><img src="https://img.shields.io/npm/v/cabul" alt=""></a>
+					<a href="http://192.145.238.5/~pasirm5/v3/cabul/data.json"><img src="https://img.shields.io/badge/dynamic/json.svg?style=plastic&logo=appveyor&label=endpoint%20count&url=http://192.145.238.5/~pasirm5/v3/cabul/data.json&query=%24.tags_count&colorB=#4c1" alt=""></a></p>
+					<a href="#">
+					<img width="600" src="test/cabul.png" alt="logo"></a></br><h2>CabulAPI</h2>
+					easy, feature rich, wholesome
+				</div>
+				<a href="#cabul" id="cabul" style="color: inherit; text-decoration: none;">
+					<h1>Cabul</h1>
+				</a>
+				<p>Next level hentai generator.<br>Cabul is aggregator with the dedicated subreddits. This wrapper exist as a directory of all hentai-related subreddit. TLDR; make it into readable res.  </p>
+				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+					<h2>Getting started</h2>
+				</a>
+				<pre><code class="language-sh"><span style="color: #008000"># npm</span>
+<span style="color: #000000">npm i cabul</span>
+
+<span style="color: #008000"># yarn</span>
+<span style="color: #000000">yarn add cabul</span>
+</code></pre>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<p>All functions return <code>Promise()</code></p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">Client</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;cabul&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">reddit</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Client</span><span style="color: #000000">();</span>
+
+<span style="color: #001080">reddit</span><span style="color: #000000">.</span><span style="color: #795E26">atago</span><span style="color: #000000">().</span><span style="color: #795E26">then</span><span style="color: #000000">((</span><span style="color: #001080">res</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">res</span><span style="color: #000000">.</span><span style="color: #001080">data</span><span style="color: #000000">));</span>
+</code></pre>
+				<a href="#mix-39em-all" id="mix-39em-all" style="color: inherit; text-decoration: none;">
+					<h2>Mix &#39;em all</h2>
+				</a>
+				<p>Useful enough to mix them if your implementation based on Telegram or Discord bot/webhook.</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">Client</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;cabul&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">reddit</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Client</span><span style="color: #000000">();</span>
+
+<span style="color: #0000FF">async</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">mix</span><span style="color: #000000">() {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">list</span><span style="color: #000000"> = [</span>
+<span style="color: #000000">        </span><span style="color: #001080">reddit</span><span style="color: #000000">.</span><span style="color: #795E26">atago</span><span style="color: #000000">(),</span>
+<span style="color: #000000">        </span><span style="color: #001080">reddit</span><span style="color: #000000">.</span><span style="color: #795E26">ecchi</span><span style="color: #000000">(),</span>
+<span style="color: #000000">        </span><span style="color: #001080">reddit</span><span style="color: #000000">.</span><span style="color: #795E26">hentai</span><span style="color: #000000">() </span><span style="color: #008000">// and your more subreddit going below</span>
+<span style="color: #000000">    ];</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">random</span><span style="color: #000000"> = </span><span style="color: #001080">list</span><span style="color: #000000">[</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">floor</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #001080">list</span><span style="color: #000000">.</span><span style="color: #001080">length</span><span style="color: #000000">)];</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">rlist</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">random</span><span style="color: #000000">;</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">rlist</span><span style="color: #000000">.</span><span style="color: #001080">data</span><span style="color: #000000">);</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #795E26">mix</span><span style="color: #000000">().</span><span style="color: #795E26">catch</span><span style="color: #000000">((</span><span style="color: #001080">err</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">err</span><span style="color: #000000">.</span><span style="color: #001080">message</span><span style="color: #000000">));</span>
+</code></pre>
+				<a href="#useful-keys" id="useful-keys" style="color: inherit; text-decoration: none;">
+					<h2>Useful keys:</h2>
+				</a>
+				<details>
+					<summary>Show example</summary>
+					<img src="test/Discord.png" width="600"></img>
+				</details>
+				<ul>
+					<li>  <strong>res.data</strong> all data</li>
+					<li>  <strong>res.data.url_overridden_by_dest</strong> Actionable image/videos/gifs</li>
+					<li>  <strong>res.data.permalink</strong> Actionable links</li>
+					<li>  <strong>res.data.title</strong> Title post</li>
+					<li>  <strong>res.data.subreddit_name_prefixed</strong> name of the Subreddit. eg: /r/blonde</li>
+					<li>  <strong>res.data.score</strong> number of Score</li>
+					<li>  <strong>res.data.subreddit_subscribers</strong> number of Subscribers</li>
+					<li>  <strong>res.data.num_comments</strong> number of Comment in a post related</li>
+					<li>  <strong>res.data.ups</strong> number of Upvotes</li>
+					<li>  <strong>res.data.downs</strong> number of Downvotes</li>
+					<li>  Other key check the rest in the <strong>data</strong></li>
+				</ul>
+				<a href="#example-returns-of-resdata" id="example-returns-of-resdata" style="color: inherit; text-decoration: none;">
+					<h2>Example Returns of <code>res.data</code>:</h2>
+				</a>
+				<pre><code class="language-js"><span style="color: #000000">{</span>
+<span style="color: #000000">  kind: </span><span style="color: #A31515">&#039;t3&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  data: {</span>
+<span style="color: #000000">    approved_at_utc: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    subreddit: </span><span style="color: #A31515">&#039;Atago&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    selftext: </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    author_fullname: </span><span style="color: #A31515">&#039;t2_13mkmqwt&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    saved: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    mod_reason_title: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    gilded: </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
+<span style="color: #000000">    clicked: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    title: </span><span style="color: #A31515">&#039;Atagos big behind&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    link_flair_richtext: [],</span>
+<span style="color: #000000">    subreddit_name_prefixed: </span><span style="color: #A31515">&#039;r/Atago&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    hidden: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    pwls: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    link_flair_css_class: </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    downs: </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
+<span style="color: #000000">    thumbnail_height: </span><span style="color: #098658">78</span><span style="color: #000000">,</span>
+<span style="color: #000000">    top_awarded_type: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    hide_score: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    name: </span><span style="color: #A31515">&#039;t3_oh8uqe&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    quarantine: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    link_flair_text_color: </span><span style="color: #A31515">&#039;dark&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    upvote_ratio: </span><span style="color: #098658">0.99</span><span style="color: #000000">,</span>
+<span style="color: #000000">    author_flair_background_color: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    subreddit_type: </span><span style="color: #A31515">&#039;public&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    ups: </span><span style="color: #098658">534</span><span style="color: #000000">,</span>
+<span style="color: #000000">    total_awards_received: </span><span style="color: #098658">3</span><span style="color: #000000">,</span>
+<span style="color: #000000">    media_embed: {},</span>
+<span style="color: #000000">    thumbnail_width: </span><span style="color: #098658">140</span><span style="color: #000000">,</span>
+<span style="color: #000000">    author_flair_template_id: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    is_original_content: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    user_reports: [],</span>
+<span style="color: #000000">    secure_media: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    is_reddit_media_domain: </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
+<span style="color: #000000">    is_meta: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    category: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    secure_media_embed: {},</span>
+<span style="color: #000000">    link_flair_text: </span><span style="color: #A31515">&#039;Atago&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    can_mod_post: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    score: </span><span style="color: #098658">534</span><span style="color: #000000">,</span>
+<span style="color: #000000">    approved_by: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    is_created_from_ads_ui: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    author_premium: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    thumbnail: </span><span style="color: #A31515">&#039;https://b.thumbs.redditmedia.com/Rsh6Og-AsGTpfsAPlR1OOCr4voR3CAL5X0fX1IihAMM.jpg&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    edited: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    author_flair_css_class: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    author_flair_richtext: [],</span>
+<span style="color: #000000">    gildings: {},</span>
+<span style="color: #000000">    post_hint: </span><span style="color: #A31515">&#039;image&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    content_categories: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    is_self: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    mod_note: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    created: </span><span style="color: #098658">1625907932</span><span style="color: #000000">,</span>
+<span style="color: #000000">    link_flair_type: </span><span style="color: #A31515">&#039;text&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    wls: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    removed_by_category: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    banned_by: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    author_flair_type: </span><span style="color: #A31515">&#039;text&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    domain: </span><span style="color: #A31515">&#039;i.redd.it&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    allow_live_comments: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    selftext_html: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    likes: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    suggested_sort: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    banned_at_utc: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    url_overridden_by_dest: </span><span style="color: #A31515">&#039;https://i.redd.it/aabldcpvbaa71.jpg&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    view_count: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    archived: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    no_follow: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    is_crosspostable: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    pinned: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    over_18: </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
+<span style="color: #000000">    preview: { images: [</span><span style="color: #267F99">Array</span><span style="color: #000000">], enabled: </span><span style="color: #0000FF">true</span><span style="color: #000000"> },</span>
+<span style="color: #000000">    all_awardings: [ [</span><span style="color: #267F99">Object</span><span style="color: #000000">], [</span><span style="color: #267F99">Object</span><span style="color: #000000">] ],</span>
+<span style="color: #000000">    awarders: [],</span>
+<span style="color: #000000">    media_only: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    link_flair_template_id: </span><span style="color: #A31515">&#039;15f3d18e-14cc-11eb-93fc-0e629d02b757&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    can_gild: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    spoiler: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    locked: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    author_flair_text: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    treatment_tags: [],</span>
+<span style="color: #000000">    visited: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    removed_by: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    num_reports: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    distinguished: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    subreddit_id: </span><span style="color: #A31515">&#039;t5_qdbs8&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    mod_reason_by: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    removal_reason: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    link_flair_background_color: </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    id: </span><span style="color: #A31515">&#039;oh8uqe&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    is_robot_indexable: </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
+<span style="color: #000000">    report_reasons: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    author: </span><span style="color: #A31515">&#039;verlene10&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    discussion_type: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    num_comments: </span><span style="color: #098658">5</span><span style="color: #000000">,</span>
+<span style="color: #000000">    send_replies: </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
+<span style="color: #000000">    whitelist_status: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    contest_mode: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    mod_reports: [],</span>
+<span style="color: #000000">    author_patreon_flair: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    author_flair_text_color: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    permalink: </span><span style="color: #A31515">&#039;/r/Atago/comments/oh8uqe/atagos_big_behind/&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    parent_whitelist_status: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    stickied: </span><span style="color: #0000FF">false</span><span style="color: #000000">,</span>
+<span style="color: #000000">    url: </span><span style="color: #A31515">&#039;https://i.redd.it/aabldcpvbaa71.jpg&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    subreddit_subscribers: </span><span style="color: #098658">24088</span><span style="color: #000000">,</span>
+<span style="color: #000000">    created_utc: </span><span style="color: #098658">1625879132</span><span style="color: #000000">,</span>
+<span style="color: #000000">    num_crossposts: </span><span style="color: #098658">1</span><span style="color: #000000">,</span>
+<span style="color: #000000">    media: </span><span style="color: #0000FF">null</span><span style="color: #000000">,</span>
+<span style="color: #000000">    is_video: </span><span style="color: #0000FF">false</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#eof" id="eof" style="color: inherit; text-decoration: none;">
+					<h2>Eof</h2>
+				</a>
+				<p>Some function may banned or priv8 only, adjust with your own handler.</p>
+				<a href="#docs" id="docs" style="color: inherit; text-decoration: none;">
+					<h2>Docs</h2>
+				</a>
+				<p>Read it if can help you, over 60 available here.
+				<a href="https://sinkaroid.github.io/cabul" title="Documentaion">Documentation</a></p>
+				<details>
+					<summary>Show tables</summary>
+					<table>
+						<thead>
+							<tr>
+								<th>Function</th>
+								<th>subReddit</th>
+								<th>description</th>
+							</tr>
+						</thead>
+						<tbody><tr>
+								<td>hentai</td>
+								<td><a href="https://www.reddit.com/r/Hentai">/r/Hentai</a></td>
+								<td>For all Japanese-style 18+ art</td>
+							</tr>
+							<tr>
+								<td>ecchi</td>
+								<td><a href="https://www.reddit.com/r/Ecchi">/r/Ecchi</a></td>
+								<td>For lewd artwork without a male presence.</td>
+							</tr>
+							<tr>
+								<td>netorare</td>
+								<td><a href="https://www.reddit.com/r/netorare">/r/netorare</a></td>
+								<td>A subreddit dedicated to netorare, or cuckold</td>
+							</tr>
+							<tr>
+								<td>kemonomimi</td>
+								<td><a href="https://www.reddit.com/r/kemonomimi">/r/kemonomimi</a></td>
+								<td>Animal girls</td>
+							</tr>
+							<tr>
+								<td>yuri</td>
+								<td><a href="https://www.reddit.com/r/Yuri">/r/Yuri</a></td>
+								<td>Girl-on-girl action</td>
+							</tr>
+							<tr>
+								<td>thicc</td>
+								<td><a href="https://www.reddit.com/r/Thighdeology">/r/Thighdeology</a></td>
+								<td>A subreddit dedicated to thicc thighs</td>
+							</tr>
+							<tr>
+								<td>ahegao</td>
+								<td><a href="https://www.reddit.com/r/Ahegao">/r/Ahegao</a></td>
+								<td>Hentai where the woman is &quot;fucked silly&quot;</td>
+							</tr>
+							<tr>
+								<td>monster</td>
+								<td><a href="https://www.reddit.com/r/Monstergirl">/r/Monstergirl</a></td>
+								<td>Where the woman has more than just animal ears/tail</td>
+							</tr>
+							<tr>
+								<td>bondage</td>
+								<td><a href="https://www.reddit.com/r/Hentaibondage">/r/Hentaibondage</a></td>
+								<td>Hentai focused on bondage</td>
+							</tr>
+							<tr>
+								<td>trap</td>
+								<td><a href="https://www.reddit.com/r/traphentai">/r/traphentai</a></td>
+								<td>Traps and traps being fucked.</td>
+							</tr>
+							<tr>
+								<td>pantsu</td>
+								<td><a href="https://www.reddit.com/r/Pantsu">/r/Pantsu</a></td>
+								<td>A subreddit dedicated to fanservice moments and artworks of anime/manga/visual novels</td>
+							</tr>
+							<tr>
+								<td>milf</td>
+								<td><a href="https://www.reddit.com/r/AnimeMILFS">/r/AnimeMILFS</a></td>
+								<td>Anime mothers you want to fuck</td>
+							</tr>
+							<tr>
+								<td>zettairyouiki</td>
+								<td><a href="https://www.reddit.com/r/ZettaiRyouiki">/r/ZettaiRyouiki</a></td>
+								<td>The strip of visible skin between a skirt and high socks</td>
+							</tr>
+							<tr>
+								<td>nekomimi</td>
+								<td><a href="https://www.reddit.com/r/Nekomimi/">/r/Nekomimi/</a></td>
+								<td>Cat girls</td>
+							</tr>
+							<tr>
+								<td>paizuri</td>
+								<td><a href="https://www.reddit.com/r/Paizuri">/r/Paizuri</a></td>
+								<td>Hentai titjobs</td>
+							</tr>
+							<tr>
+								<td>booty</td>
+								<td><a href="https://www.reddit.com/r/Animebooty">/r/Animebooty</a></td>
+								<td>An ass subreddit. That&#39;s all.</td>
+							</tr>
+							<tr>
+								<td>waifusgonewild</td>
+								<td><a href="https://www.reddit.com/r/Waifusgonewild">/r/Waifusgonewild</a></td>
+								<td>Anime girls taking lewd selfies</td>
+							</tr>
+							<tr>
+								<td>gameovergirls</td>
+								<td><a href="https://www.reddit.com/r/GameOverGirls">/r/GameOverGirls</a></td>
+								<td>Girls being dominated as if in a &quot;Game Over&quot; sequence.</td>
+							</tr>
+							<tr>
+								<td>sukebei</td>
+								<td><a href="https://www.reddit.com/r/Sukebei">/r/Sukebei</a></td>
+								<td>Naked anime girls</td>
+							</tr>
+							<tr>
+								<td>cum</td>
+								<td><a href="https://www.reddit.com/r/CumHentai">/r/CumHentai</a></td>
+								<td>Cum. Lots of it.</td>
+							</tr>
+							<tr>
+								<td>corruptionhentai</td>
+								<td><a href="https://www.reddit.com/r/Corruptionhentai">/r/Corruptionhentai</a></td>
+								<td>Hentai Subreddit focused on the corruption of the innocent. Debauch the pure heroines and the like.</td>
+							</tr>
+							<tr>
+								<td>chiisai</td>
+								<td><a href="https://www.reddit.com/r/Chiisaihentai">/r/Chiisaihentai</a></td>
+								<td>A subreddit dedicated to tiny boobs</td>
+							</tr>
+							<tr>
+								<td>muchi</td>
+								<td><a href="https://www.reddit.com/r/Muchihentai">/r/Muchihentai</a></td>
+								<td>Anime girls with a bit of extra meat on them</td>
+							</tr>
+							<tr>
+								<td>tentai</td>
+								<td><a href="https://www.reddit.com/r/Tentai/">/r/Tentai/</a></td>
+								<td>Where the woman is fucked by tentacles</td>
+							</tr>
+							<tr>
+								<td>dekai</td>
+								<td><a href="https://www.reddit.com/r/Tentai/">/r/Dekaihentai</a></td>
+								<td>A subreddit dedicated to huge boobs</td>
+							</tr>
+							<tr>
+								<td>yaoi</td>
+								<td><a href="https://www.reddit.com/r/Yaoi">/r/Yaoi</a></td>
+								<td>Guy-on-guy action</td>
+							</tr>
+							<tr>
+								<td>oral</td>
+								<td><a href="https://www.reddit.com/r/Animemidriff">/r/OralHentai</a></td>
+								<td>A subreddit dedicated to all things oral</td>
+							</tr>
+							<tr>
+								<td>armpits</td>
+								<td><a href="https://www.reddit.com/r/AnimeArmpits">/r/AnimeArmpits</a></td>
+								<td>Armpits of cute anime girls</td>
+							</tr>
+							<tr>
+								<td>bodysuits</td>
+								<td><a href="https://www.reddit.com/r/Animebodysuits">/r/Animebodysuits</a></td>
+								<td>Form fitting clothing that shows it all</td>
+							</tr>
+							<tr>
+								<td>rippedlegwear</td>
+								<td><a href="https://www.reddit.com/r/rippedanimelegwear">/r/rippedanimelegwear </a></td>
+								<td>Dedicated to ripped anime legwear</td>
+							</tr>
+							<tr>
+								<td>atago</td>
+								<td><a href="https://www.reddit.com/r/Atago">/r/Atago</a></td>
+								<td>A subreddit dedicated to the character Atago from Azur Lane</td>
+							</tr>
+							<tr>
+								<td>handbras</td>
+								<td><a href="https://www.reddit.com/r/Animehandbras">/r/Animehandbras</a></td>
+								<td>Where the women substitute a bra with their hands and arms</td>
+							</tr>
+							<tr>
+								<td>elf</td>
+								<td><a href="https://www.reddit.com/r/ElfHentai">/r/ElfHentai</a></td>
+								<td>Dedicated to hentai with Elves (CURRENTLY BANNED)</td>
+							</tr>
+							<tr>
+								<td>ecchibondage</td>
+								<td><a href="https://www.reddit.com/r/EcchiBondage">/r/EcchiBondage</a></td>
+								<td>Like hentai bondage, just less lewd</td>
+							</tr>
+							<tr>
+								<td>cleavage</td>
+								<td><a href="https://www.reddit.com/r/HentaiCleavage">/r/HentaiCleavage</a></td>
+								<td>Juicy cleavage</td>
+							</tr>
+							<tr>
+								<td>maid</td>
+								<td><a href="https://www.reddit.com/r/MaidHentai">/r/MaidHentai</a></td>
+								<td>Hentai with maids</td>
+							</tr>
+							<tr>
+								<td>usagi</td>
+								<td><a href="https://www.reddit.com/r/Usagimimi">/r/Usagimimi</a></td>
+								<td>Bunny girls</td>
+							</tr>
+							<tr>
+								<td>lactation</td>
+								<td><a href="https://www.reddit.com/r/Hentailactation">/r/Hentailactation</a></td>
+								<td>A subreddit dedicated to art depicting erotic lactation.</td>
+							</tr>
+							<tr>
+								<td>feet</td>
+								<td><a href="https://www.reddit.com/r/AshiHentai">/r/AshiHentai</a></td>
+								<td>A subreddit dedicated to juicy anime feet</td>
+							</tr>
+							<tr>
+								<td>lewd</td>
+								<td><a href="https://www.reddit.com/r/LewdAnimeGirls">/r/LewdAnimeGirls</a></td>
+								<td>A smaller version of r/Ecchi</td>
+							</tr>
+							<tr>
+								<td>taihou</td>
+								<td><a href="https://www.reddit.com/r/Taihou">/r/Taihou</a></td>
+								<td>A subreddit dedicated the the characte Taihou from Azur Lane</td>
+							</tr>
+							<tr>
+								<td>christmascake</td>
+								<td><a href="https://www.reddit.com/r/ChristmasCake">/r/ChristmasCake</a></td>
+								<td>Where the woman is unmarried and over the age of 25, thus, &quot;unsold&quot; before the 25th of december. hence, a Christmas cake</td>
+							</tr>
+							<tr>
+								<td>rikka</td>
+								<td><a href="https://www.reddit.com/r/ChurchOfRikka">/r/ChurchOfRikka</a></td>
+								<td>A subreddit dedicated to the character Rikka Takarada from SSSS.Gridman.</td>
+							</tr>
+							<tr>
+								<td>hearts</td>
+								<td><a href="https://www.reddit.com/r/HentaiHearts">/r/HentaiHearts</a></td>
+								<td>A hentai subreddits with hearts as a focus, particularly in the eyes</td>
+							</tr>
+							<tr>
+								<td>bisex</td>
+								<td><a href="https://www.reddit.com/r/BisexualHentai">/r/BisexualHentai</a></td>
+								<td>A hentai subreddit with a bisexual focus</td>
+							</tr>
+							<tr>
+								<td>smothering</td>
+								<td><a href="https://www.reddit.com/r/HentaiSmothering">/r/HentaiSmothering</a></td>
+								<td>Where the woman smothers another person with her body</td>
+							</tr>
+							<tr>
+								<td>vacuum</td>
+								<td><a href="https://www.reddit.com/r/VacuumHentai">/r/VacuumHentai</a></td>
+								<td>Women vacuum sealed in bags</td>
+							</tr>
+							<tr>
+								<td>humiliation</td>
+								<td><a href="https://www.reddit.com/r/HentaiHumiliation">/r/HentaiHumiliation</a></td>
+								<td>Where the woman is degraded and humiliated</td>
+							</tr>
+							<tr>
+								<td>forniphilia</td>
+								<td><a href="https://www.reddit.com/r/HentaiForniphilia">/r/HentaiForniphilia</a></td>
+								<td>Where the woman is turned into an object</td>
+							</tr>
+							<tr>
+								<td>officelady</td>
+								<td><a href="https://www.reddit.com/r/OfficeLady">/r/OfficeLady</a></td>
+								<td>For business dressed women</td>
+							</tr>
+							<tr>
+								<td>dtittytouching</td>
+								<td><a href="https://www.reddit.com/r/2DTittyTouching">/r/2DTittyTouching</a></td>
+								<td>For drawn titties touching other drawn titties.</td>
+							</tr>
+							<tr>
+								<td>inumimi</td>
+								<td><a href="https://www.reddit.com/r/inumimi">/r/inumimi</a></td>
+								<td>Doggirls</td>
+							</tr>
+							<tr>
+								<td>cumsluts</td>
+								<td><a href="https://www.reddit.com/r/HentaiCumsluts">/r/HentaiCumsluts</a></td>
+								<td>Girls who love being covered in cum.</td>
+							</tr>
+							<tr>
+								<td>heterochromia</td>
+								<td><a href="https://www.reddit.com/r/Heterochromiahentai">/r/Heterochromiahentai</a></td>
+								<td>Girls with different coloured eyes</td>
+							</tr>
+							<tr>
+								<td>ai</td>
+								<td><a href="https://www.reddit.com/r/MechanicalSluts">/r/MechanicalSluts</a></td>
+								<td>A porn subreddit for androids, AI, cyborgs etc</td>
+							</tr>
+							<tr>
+								<td>pokeporn</td>
+								<td><a href="https://www.reddit.com/r/PokePorn">/r/PokePorn</a></td>
+								<td>Pokemon-themed porn</td>
+							</tr>
+							<tr>
+								<td>rule34</td>
+								<td><a href="https://www.reddit.com/r/rule34">/r/rule34</a></td>
+								<td>If it exists, there exists porn of it, likely found here</td>
+							</tr>
+							<tr>
+								<td>western</td>
+								<td><a href="https://www.reddit.com/r/WesternHentai">/r/WesternHentai</a></td>
+								<td>Hentai in a western style</td>
+							</tr>
+							<tr>
+								<td>lol</td>
+								<td><a href="https://www.reddit.com/r/Rule34LoL">/r/Rule34LoL</a></td>
+								<td>League Of Legends-themed porn</td>
+							</tr>
+							<tr>
+								<td>arknuts</td>
+								<td><a href="https://www.reddit.com/r/Arknuts">/r/Arknuts</a></td>
+								<td>Arknights- themed porn</td>
+							</tr>
+							<tr>
+								<td>overwatch</td>
+								<td><a href="https://www.reddit.com/r/Overwatch_Porn">/r/Overwatch_Porn</a></td>
+								<td>Overwatch-themed porn</td>
+							</tr>
+							<tr>
+								<td>twob</td>
+								<td><a href="https://www.reddit.com/r/2Booty">/r/2Booty</a></td>
+								<td>NieR: Automata-themed porn</td>
+							</tr>
+							<tr>
+								<td>kanmusunights</td>
+								<td><a href="https://www.reddit.com/r/2Booty">/r/KanMusuNights</a></td>
+								<td>Kantai Collection-themed porn</td>
+							</tr>
+					</tbody></table>
+				</details>
+				<a href="#todo" id="todo" style="color: inherit; text-decoration: none;">
+					<h2>Todo</h2>
+				</a>
+				<ul>
+					<li>  [x] Hentai</li>
+					<li>  [ ] Real (porn)</li>
+				</ul>
+				<a href="#legal" id="legal" style="color: inherit; text-decoration: none;">
+					<h2>Legal</h2>
+				</a>
+				<p>This tool can be freely copied, modified, altered, distributed without any attribution whatsoever. However, if you feel like this tool deserves an attribution, mention it. It won&#39;t hurt anybody :)</p>
+				<p>Please, read the <a href="LICENSE">license terms</a>. Don&#39;t worry, it can be read in less than 30 seconds, unless you have some sort of reading disability - in that case, I&#39;m wondering why you&#39;re still reading this text. Really. Stop. Please. I mean, seriously. Why are you still reading?</p>
+				<a href="#acknowledgements" id="acknowledgements" style="color: inherit; text-decoration: none;">
+					<h2>Acknowledgements</h2>
+				</a>
+				<p>Since this tool includes some contributions, and I&#39;m not an asshole, I&#39;ll publically thank the following users for their help:</p>
+				<ul>
+					<li>  <a href="https://www.reddit.com/r/hentai">/r/Hentai</a> Data reference</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/default.html" class="tsd-kind-icon">default</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
