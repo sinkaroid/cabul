@@ -1,6 +1,6 @@
 {
     "name": "cabul",
-    "version": "0.0.14",
+    "version": "0.0.15",
     "description": "Reddit hentai aggregator",
     "main": "lib/index.js",
     "files": [
