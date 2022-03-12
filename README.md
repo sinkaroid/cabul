@@ -1,7 +1,7 @@
 <div align="center">
 <img width="600" src="https://cdn.discordapp.com/attachments/952117487166705747/952118781944143912/node-cabul.png" alt="cabul!">
 
-# Cabul [![Build and documentation](https://github.com/sinkaroid/cabul/actions/workflows/docs.yml/badge.svg)](https://github.com/sinkaroid/cabul/actions/workflows/docs.yml) [![Maintainability](https://api.codeclimate.com/v1/badges/3f12d56ab080f22e4495/maintainability)](https://codeclimate.com/github/sinkaroid/cabul/maintainability)
+# Cabul [![Build and documentation](https://github.com/sinkaroid/cabul/actions/workflows/docs.yml/badge.svg)](https://github.com/sinkaroid/cabul/actions/workflows/docs.yml) [![Maintainability](https://api.codeclimate.com/v1/badges/90b543fc3495b932488a/maintainability)](https://codeclimate.com/github/sinkaroid/cabul/maintainability)
 Cabul guide you to the NSFW world of reddit.
 
 This module exist as a directory of all popular NSFW-related subreddits.
