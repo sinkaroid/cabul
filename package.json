@@ -1,0 +1,46 @@
+{
+  "name": "cabul",
+  "description": "This wrapper exist as a directory of popular nsfw-related subreddit.",
+  "version": "0.0.16",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build/**/**"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "node test/test.js",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "docs": "typedoc src/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinkaroid/cabul.git"
+  },
+  "keywords": [
+    "wrapper",
+    "reddit",
+    "nsfw",
+    "hentai",
+    "porn"
+  ],
+  "author": "sinkaroid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sinkaroid/cabul/issues"
+  },
+  "homepage": "https://github.com/sinkaroid/cabul#readme",
+  "dependencies": {
+    "@types/node": "^15.12.2",
+    "superagent": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/superagent": "^4.1.11",
+    "typescript": "^4.3.4",
+    "prettier": "^2.0.5",
+    "tslint": "^6.1.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typedoc": "^0.22.13"
+  }
+}
