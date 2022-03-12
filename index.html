@@ -1,0 +1,1126 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>cabul</title><meta name="description" content="Documentation for cabul"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">cabul</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>cabul</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography"><div align="center">
+<img width="600" src="https://cdn.discordapp.com/attachments/952117487166705747/952118781944143912/node-cabul.png" alt="cabul!">
+
+
+<a href="#cabul--" id="cabul--" style="color: inherit; text-decoration: none;">
+  <h1>Cabul <a href="https://github.com/sinkaroid/cabul/actions/workflows/docs.yml"><img src="https://github.com/sinkaroid/cabul/actions/workflows/docs.yml/badge.svg" alt="Build and documentation"></a> <a href="https://codeclimate.com/github/sinkaroid/cabul/maintainability"><img src="https://api.codeclimate.com/v1/badges/90b543fc3495b932488a/maintainability" alt="Maintainability"></a></h1>
+</a>
+<p>Cabul guide you to the NSFW world of reddit.</p>
+<p>This module exist as a directory of all popular NSFW-related subreddits.
+The endpoints that cabul has is hand-picked and curated by the whole community, so the data taken is always wholesome, and easy to use check your intelisense.</p>
+<p><a href="#table-of-subreddit">Table of Subreddit</a> •
+<a href="https://sinkaroid.github.io/cabul">Documentation</a> •
+<a href="https://github.com/sinkaroid/cabul/blob/master/CONTRIBUTING.md">Add new endpoint</a></p>
+</div>
+
+<hr>
+
+<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+  <h2>Features</h2>
+</a>
+<ul>
+<li><strong>Featureful</strong>: resolves and interacts with ease</li>
+<li><strong>Fancy functional</strong>: out of the box</li>
+<li><strong>Curated</strong> by the whole community</li>
+<li><strong>Arbitrary</strong>: GET request will be support as well</li>
+<li><strong>Easy to use</strong>: check your intelisense</li>
+<li><strong>All in one</strong>: packed with hentai, irl, and memes</li>
+</ul>
+
+<a href="#prerequisites" id="prerequisites" style="color: inherit; text-decoration: none;">
+  <h2>Prerequisites</h2>
+</a>
+<ul>
+<li>Node.js v12 or above.</li>
+<li>Can parse JSON</li>
+</ul>
+
+<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+  <h2>Installation</h2>
+</a>
+<p><code>npm install cabul / yarn add cabul</code></p>
+
+<a href="#improvements" id="improvements" style="color: inherit; text-decoration: none;">
+  <h2>Improvements</h2>
+</a>
+<p>Starting from 0.0.16.dev, you will get more degenerate than the previous version, hence you should upgrade to the latest version.</p>
+<ul>
+<li>You can sort by the popularity of posts</li>
+<li>Adding a bunch of endpoints support</li>
+<li>You can set it to 25 list instead of 1 object</li>
+<li>Not just hentai, now <code>irl</code> and <code>memes</code> has been merged to cabul!</li>
+<li>Arbitrary GET from the API will return as well<ul>
+<li>You can easily submit a pull request for adding new subreddit support</li>
+</ul>
+</li>
+</ul>
+
+<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+  <h2>Example</h2>
+</a>
+<p><strong>Here I&#39;ll show you how to import either <code>hentai</code>, <code>irl</code>, or <code>meme</code></strong></p>
+<pre><code class="language-js"><span class="hl-0">const</span><span class="hl-1"> { </span><span class="hl-2">Cabul</span><span class="hl-1"> } = </span><span class="hl-3">require</span><span class="hl-1">(</span><span class="hl-4">&#39;cabul&#39;</span><span class="hl-1">);</span><br/><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">reddit</span><span class="hl-1"> = </span><span class="hl-0">new</span><span class="hl-1"> </span><span class="hl-3">Cabul</span><span class="hl-1">()</span><br/><br/><span class="hl-5">// To use and import hentai only</span><br/><span class="hl-6">reddit</span><span class="hl-1">.</span><span class="hl-3">hentai</span><span class="hl-1">(</span><span class="hl-4">&quot;ahegao&quot;</span><span class="hl-1">, </span><span class="hl-4">&quot;hot&quot;</span><span class="hl-1">).</span><span class="hl-3">then</span><span class="hl-1">(</span><span class="hl-6">res</span><span class="hl-1"> </span><span class="hl-0">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-6">console</span><span class="hl-1">.</span><span class="hl-3">log</span><span class="hl-1">(</span><span class="hl-6">res</span><span class="hl-1">); </span><span class="hl-5">// Returns a object </span><br/><span class="hl-1">});</span><br/><br/><span class="hl-5">// To use and import irl only</span><br/><span class="hl-6">reddit</span><span class="hl-1">.</span><span class="hl-3">irl</span><span class="hl-1">(</span><span class="hl-4">&quot;gonewild&quot;</span><span class="hl-1">, </span><span class="hl-4">&quot;top&quot;</span><span class="hl-1">).</span><span class="hl-3">then</span><span class="hl-1">(</span><span class="hl-6">res</span><span class="hl-1"> </span><span class="hl-0">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-6">console</span><span class="hl-1">.</span><span class="hl-3">log</span><span class="hl-1">(</span><span class="hl-6">res</span><span class="hl-1">); </span><span class="hl-5">// Returns a object </span><br/><span class="hl-1">});</span><br/><br/><span class="hl-5">// To use and import memes only</span><br/><span class="hl-6">reddit</span><span class="hl-1">.</span><span class="hl-3">meme</span><span class="hl-1">(</span><span class="hl-4">&quot;hentaimemes&quot;</span><span class="hl-1">, </span><span class="hl-4">&quot;controversial&quot;</span><span class="hl-1">).</span><span class="hl-3">then</span><span class="hl-1">(</span><span class="hl-6">res</span><span class="hl-1"> </span><span class="hl-0">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-6">console</span><span class="hl-1">.</span><span class="hl-3">log</span><span class="hl-1">(</span><span class="hl-6">res</span><span class="hl-1">); </span><span class="hl-5">// Returns a object </span><br/><span class="hl-1">});</span>
+</code></pre>
+<p><em>That above one will returns a single random posts object.</em></p>
+<p><strong>If you dont want to get random, you can set the third parameter to <code>true</code></strong></p>
+<pre><code class="language-js"><span class="hl-6">reddit</span><span class="hl-1">.</span><span class="hl-3">hentai</span><span class="hl-1">(</span><span class="hl-4">&quot;atago&quot;</span><span class="hl-1">, </span><span class="hl-4">&quot;hot&quot;</span><span class="hl-1">, </span><span class="hl-0">true</span><span class="hl-1">).</span><span class="hl-3">then</span><span class="hl-1">(</span><span class="hl-6">res</span><span class="hl-1"> </span><span class="hl-0">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-6">console</span><span class="hl-1">.</span><span class="hl-3">log</span><span class="hl-1">(</span><span class="hl-6">res</span><span class="hl-1">); </span><span class="hl-5">// Returns a object </span><br/><span class="hl-1">});</span>
+</code></pre>
+<p><em>That above one will represents the 25 object posts.</em></p>
+<p>Not sure what the parameter looks like? Check your intelisense.</p>
+<p><strong>Takes parameters:</strong></p>
+<ul>
+<li>Required: <strong>type</strong> (String, Check <a href="./endpoint.json">endpoint.json</a>) The related endpoint of subreddit.<ul>
+<li>If not provided, it will throw you an error.</li>
+</ul>
+</li>
+<li>Optional: <strong>sortby</strong> (String, Should be: <code>hot</code> | <code>new</code> | <code>top</code> | <code>controversial</code>) Gets data according popularity.<ul>
+<li>If not provided, it will be random between hot, new, top, and controversial.</li>
+</ul>
+</li>
+<li>Optional: <strong>no_random</strong> (Boolean) If true, will returns 25 list instead of 1 random.<ul>
+<li>If not provided, it will default to <code>false</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Returns:</strong> Single object or 25 list of object (if third parameter is true) that represents the data.</p>
+
+<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+  <h2>Documentation</h2>
+</a>
+<p>The documentation can be found <a href="https://sinkaroid.github.io/cabul">https://sinkaroid.github.io/cabul</a></p>
+<ul>
+<li>
+<a href="#reddithentaioptions" id="reddithentaioptions" style="color: inherit; text-decoration: none;">
+  <h3>reddit.hentai(options)</h3>
+</a>
+<ul>
+<li>Gets random or list data from related hentai subreddit.</li>
+</ul>
+</li>
+<li>
+<a href="#redditirloptions" id="redditirloptions" style="color: inherit; text-decoration: none;">
+  <h3>reddit.irl(options)</h3>
+</a>
+<ul>
+<li>Gets random or list data from related irl nsfw subreddit.</li>
+</ul>
+</li>
+<li>
+<a href="#redditmemesoptions" id="redditmemesoptions" style="color: inherit; text-decoration: none;">
+  <h3>reddit.memes(options)</h3>
+</a>
+<ul>
+<li>Gets random or list data from related nsfw memes subreddit.</li>
+</ul>
+</li>
+</ul>
+
+<a href="#table-of-subreddit" id="table-of-subreddit" style="color: inherit; text-decoration: none;">
+  <h2>Table of subreddit</h2>
+</a>
+<p>Here the list of popular subreddit that cabul can handle.<br>Sometime specific subreddit is not available or maybe is ban, it will throw you an
+error.</p>
+
+<a href="#hentai" id="hentai" style="color: inherit; text-decoration: none;">
+  <h3>Hentai</h3>
+</a>
+<details>
+<summary>The list of popular hentai subreddit.</summary>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Subreddit</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hentai</td>
+<td><a href="https://www.reddit.com/r/Hentai">/r/Hentai</a></td>
+<td>For all Japanese-style 18+ art</td>
+</tr>
+<tr>
+<td>ecchi</td>
+<td><a href="https://www.reddit.com/r/Ecchi">/r/Ecchi</a></td>
+<td>For lewd artwork without a male presence.</td>
+</tr>
+<tr>
+<td>netorare</td>
+<td><a href="https://www.reddit.com/r/netorare">/r/netorare</a></td>
+<td>A subreddit dedicated to netorare, or cuckold</td>
+</tr>
+<tr>
+<td>kemonomimi</td>
+<td><a href="https://www.reddit.com/r/kemonomimi">/r/kemonomimi</a></td>
+<td>Animal girls</td>
+</tr>
+<tr>
+<td>yuri</td>
+<td><a href="https://www.reddit.com/r/Yuri">/r/Yuri</a></td>
+<td>Girl-on-girl action</td>
+</tr>
+<tr>
+<td>thicc</td>
+<td><a href="https://www.reddit.com/r/Thighdeology">/r/Thighdeology</a></td>
+<td>A subreddit dedicated to thicc thighs</td>
+</tr>
+<tr>
+<td>ahegao</td>
+<td><a href="https://www.reddit.com/r/Ahegao">/r/Ahegao</a></td>
+<td>Hentai where the woman is &quot;fucked silly&quot;</td>
+</tr>
+<tr>
+<td>monster</td>
+<td><a href="https://www.reddit.com/r/Monstergirl">/r/Monstergirl</a></td>
+<td>Where the woman has more than just animal ears/tail</td>
+</tr>
+<tr>
+<td>bondage</td>
+<td><a href="https://www.reddit.com/r/Hentaibondage">/r/Hentaibondage</a></td>
+<td>Hentai focused on bondage</td>
+</tr>
+<tr>
+<td>trap</td>
+<td><a href="https://www.reddit.com/r/traphentai">/r/traphentai</a></td>
+<td>Traps and traps being fucked.</td>
+</tr>
+<tr>
+<td>pantsu</td>
+<td><a href="https://www.reddit.com/r/Pantsu">/r/Pantsu</a></td>
+<td>A subreddit dedicated to fanservice moments and artworks of anime/manga/visual novels</td>
+</tr>
+<tr>
+<td>milf</td>
+<td><a href="https://www.reddit.com/r/AnimeMILFS">/r/AnimeMILFS</a></td>
+<td>Anime mothers you want to fuck</td>
+</tr>
+<tr>
+<td>zettairyouiki</td>
+<td><a href="https://www.reddit.com/r/ZettaiRyouiki">/r/ZettaiRyouiki</a></td>
+<td>The strip of visible skin between a skirt and high socks</td>
+</tr>
+<tr>
+<td>nekomimi</td>
+<td><a href="https://www.reddit.com/r/Nekomimi/">/r/Nekomimi/</a></td>
+<td>Cat girls</td>
+</tr>
+<tr>
+<td>paizuri</td>
+<td><a href="https://www.reddit.com/r/Paizuri">/r/Paizuri</a></td>
+<td>Hentai titjobs</td>
+</tr>
+<tr>
+<td>booty</td>
+<td><a href="https://www.reddit.com/r/Animebooty">/r/Animebooty</a></td>
+<td>An ass subreddit. That&#39;s all.</td>
+</tr>
+<tr>
+<td>waifusgonewild</td>
+<td><a href="https://www.reddit.com/r/Waifusgonewild">/r/Waifusgonewild</a></td>
+<td>Anime girls taking lewd selfies</td>
+</tr>
+<tr>
+<td>gameovergirls</td>
+<td><a href="https://www.reddit.com/r/GameOverGirls">/r/GameOverGirls</a></td>
+<td>Girls being dominated as if in a &quot;Game Over&quot; sequence.</td>
+</tr>
+<tr>
+<td>sukebei</td>
+<td><a href="https://www.reddit.com/r/Sukebei">/r/Sukebei</a></td>
+<td>Naked anime girls</td>
+</tr>
+<tr>
+<td>cum</td>
+<td><a href="https://www.reddit.com/r/CumHentai">/r/CumHentai</a></td>
+<td>Cum. Lots of it.</td>
+</tr>
+<tr>
+<td>corruptionhentai</td>
+<td><a href="https://www.reddit.com/r/Corruptionhentai">/r/Corruptionhentai</a></td>
+<td>Hentai Subreddit focused on the corruption of the innocent. Debauch the pure heroines and the like.</td>
+</tr>
+<tr>
+<td>chiisai</td>
+<td><a href="https://www.reddit.com/r/Chiisaihentai">/r/Chiisaihentai</a></td>
+<td>A subreddit dedicated to tiny boobs</td>
+</tr>
+<tr>
+<td>muchi</td>
+<td><a href="https://www.reddit.com/r/Muchihentai">/r/Muchihentai</a></td>
+<td>Anime girls with a bit of extra meat on them</td>
+</tr>
+<tr>
+<td>tentai</td>
+<td><a href="https://www.reddit.com/r/Tentai/">/r/Tentai/</a></td>
+<td>Where the woman is fucked by tentacles</td>
+</tr>
+<tr>
+<td>dekai</td>
+<td><a href="https://www.reddit.com/r/Tentai/">/r/Dekaihentai</a></td>
+<td>A subreddit dedicated to huge boobs</td>
+</tr>
+<tr>
+<td>yaoi</td>
+<td><a href="https://www.reddit.com/r/Yaoi">/r/Yaoi</a></td>
+<td>Guy-on-guy action</td>
+</tr>
+<tr>
+<td>oral</td>
+<td><a href="https://www.reddit.com/r/Animemidriff">/r/OralHentai</a></td>
+<td>A subreddit dedicated to all things oral</td>
+</tr>
+<tr>
+<td>armpits</td>
+<td><a href="https://www.reddit.com/r/AnimeArmpits">/r/AnimeArmpits</a></td>
+<td>Armpits of cute anime girls</td>
+</tr>
+<tr>
+<td>bodysuits</td>
+<td><a href="https://www.reddit.com/r/Animebodysuits">/r/Animebodysuits</a></td>
+<td>Form fitting clothing that shows it all</td>
+</tr>
+<tr>
+<td>rippedlegwear</td>
+<td><a href="https://www.reddit.com/r/rippedanimelegwear">/r/rippedanimelegwear </a></td>
+<td>Dedicated to ripped anime legwear</td>
+</tr>
+<tr>
+<td>atago</td>
+<td><a href="https://www.reddit.com/r/Atago">/r/Atago</a></td>
+<td>A subreddit dedicated to the character Atago from Azur Lane</td>
+</tr>
+<tr>
+<td>handbras</td>
+<td><a href="https://www.reddit.com/r/Animehandbras">/r/Animehandbras</a></td>
+<td>Where the women substitute a bra with their hands and arms</td>
+</tr>
+<tr>
+<td>elf</td>
+<td><a href="https://www.reddit.com/r/ElfHentai">/r/ElfHentai</a></td>
+<td>Dedicated to hentai with Elves (CURRENTLY BANNED)</td>
+</tr>
+<tr>
+<td>ecchibondage</td>
+<td><a href="https://www.reddit.com/r/EcchiBondage">/r/EcchiBondage</a></td>
+<td>Like hentai bondage, just less lewd</td>
+</tr>
+<tr>
+<td>cleavage</td>
+<td><a href="https://www.reddit.com/r/HentaiCleavage">/r/HentaiCleavage</a></td>
+<td>Juicy cleavage</td>
+</tr>
+<tr>
+<td>maid</td>
+<td><a href="https://www.reddit.com/r/MaidHentai">/r/MaidHentai</a></td>
+<td>Hentai with maids</td>
+</tr>
+<tr>
+<td>usagi</td>
+<td><a href="https://www.reddit.com/r/Usagimimi">/r/Usagimimi</a></td>
+<td>Bunny girls</td>
+</tr>
+<tr>
+<td>lactation</td>
+<td><a href="https://www.reddit.com/r/Hentailactation">/r/Hentailactation</a></td>
+<td>A subreddit dedicated to art depicting erotic lactation.</td>
+</tr>
+<tr>
+<td>feet</td>
+<td><a href="https://www.reddit.com/r/AshiHentai">/r/AshiHentai</a></td>
+<td>A subreddit dedicated to juicy anime feet</td>
+</tr>
+<tr>
+<td>lewd</td>
+<td><a href="https://www.reddit.com/r/LewdAnimeGirls">/r/LewdAnimeGirls</a></td>
+<td>A smaller version of r/Ecchi</td>
+</tr>
+<tr>
+<td>taihou</td>
+<td><a href="https://www.reddit.com/r/Taihou">/r/Taihou</a></td>
+<td>A subreddit dedicated the the characte Taihou from Azur Lane</td>
+</tr>
+<tr>
+<td>christmascake</td>
+<td><a href="https://www.reddit.com/r/ChristmasCake">/r/ChristmasCake</a></td>
+<td>Where the woman is unmarried and over the age of 25, thus, &quot;unsold&quot; before the 25th of december. hence, a Christmas cake</td>
+</tr>
+<tr>
+<td>rikka</td>
+<td><a href="https://www.reddit.com/r/ChurchOfRikka">/r/ChurchOfRikka</a></td>
+<td>A subreddit dedicated to the character Rikka Takarada from SSSS.Gridman.</td>
+</tr>
+<tr>
+<td>hearts</td>
+<td><a href="https://www.reddit.com/r/HentaiHearts">/r/HentaiHearts</a></td>
+<td>A hentai subreddits with hearts as a focus, particularly in the eyes</td>
+</tr>
+<tr>
+<td>bisex</td>
+<td><a href="https://www.reddit.com/r/BisexualHentai">/r/BisexualHentai</a></td>
+<td>A hentai subreddit with a bisexual focus</td>
+</tr>
+<tr>
+<td>smothering</td>
+<td><a href="https://www.reddit.com/r/HentaiSmothering">/r/HentaiSmothering</a></td>
+<td>Where the woman smothers another person with her body</td>
+</tr>
+<tr>
+<td>vacuum</td>
+<td><a href="https://www.reddit.com/r/VacuumHentai">/r/VacuumHentai</a></td>
+<td>Women vacuum sealed in bags</td>
+</tr>
+<tr>
+<td>humiliation</td>
+<td><a href="https://www.reddit.com/r/HentaiHumiliation">/r/HentaiHumiliation</a></td>
+<td>Where the woman is degraded and humiliated</td>
+</tr>
+<tr>
+<td>forniphilia</td>
+<td><a href="https://www.reddit.com/r/HentaiForniphilia">/r/HentaiForniphilia</a></td>
+<td>Where the woman is turned into an object</td>
+</tr>
+<tr>
+<td>officelady</td>
+<td><a href="https://www.reddit.com/r/OfficeLady">/r/OfficeLady</a></td>
+<td>For business dressed women</td>
+</tr>
+<tr>
+<td>dtittytouching</td>
+<td><a href="https://www.reddit.com/r/2DTittyTouching">/r/2DTittyTouching</a></td>
+<td>For drawn titties touching other drawn titties.</td>
+</tr>
+<tr>
+<td>inumimi</td>
+<td><a href="https://www.reddit.com/r/inumimi">/r/inumimi</a></td>
+<td>Doggirls</td>
+</tr>
+<tr>
+<td>cumsluts</td>
+<td><a href="https://www.reddit.com/r/HentaiCumsluts">/r/HentaiCumsluts</a></td>
+<td>Girls who love being covered in cum.</td>
+</tr>
+<tr>
+<td>heterochromia</td>
+<td><a href="https://www.reddit.com/r/Heterochromiahentai">/r/Heterochromiahentai</a></td>
+<td>Girls with different coloured eyes</td>
+</tr>
+<tr>
+<td>ai</td>
+<td><a href="https://www.reddit.com/r/MechanicalSluts">/r/MechanicalSluts</a></td>
+<td>A porn subreddit for androids, AI, cyborgs etc</td>
+</tr>
+<tr>
+<td>pokeporn</td>
+<td><a href="https://www.reddit.com/r/PokePorn">/r/PokePorn</a></td>
+<td>Pokemon-themed porn</td>
+</tr>
+<tr>
+<td>rule34</td>
+<td><a href="https://www.reddit.com/r/rule34">/r/rule34</a></td>
+<td>If it exists, there exists porn of it, likely found here</td>
+</tr>
+<tr>
+<td>western</td>
+<td><a href="https://www.reddit.com/r/WesternHentai">/r/WesternHentai</a></td>
+<td>Hentai in a western style</td>
+</tr>
+<tr>
+<td>lol</td>
+<td><a href="https://www.reddit.com/r/Rule34LoL">/r/Rule34LoL</a></td>
+<td>League Of Legends-themed porn</td>
+</tr>
+<tr>
+<td>arknuts</td>
+<td><a href="https://www.reddit.com/r/Arknuts">/r/Arknuts</a></td>
+<td>Arknights- themed porn</td>
+</tr>
+<tr>
+<td>overwatch</td>
+<td><a href="https://www.reddit.com/r/Overwatch_Porn">/r/Overwatch_Porn</a></td>
+<td>Overwatch-themed porn</td>
+</tr>
+<tr>
+<td>twob</td>
+<td><a href="https://www.reddit.com/r/2Booty">/r/2Booty</a></td>
+<td>NieR: Automata-themed porn</td>
+</tr>
+<tr>
+<td>kanmusunights</td>
+<td><a href="https://www.reddit.com/r/2Booty">/r/KanMusuNights</a></td>
+<td>Kantai Collection-themed porn</td>
+</tr>
+</tbody></table>
+</details> 
+
+
+<a href="#irl" id="irl" style="color: inherit; text-decoration: none;">
+  <h3>IRL</h3>
+</a>
+<details>
+<summary>The list of popular Irl nsfw subreddit.</summary>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Subreddit</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r/gonewild</td>
+<td><a href="#">/r/gonewild</a></td>
+<td>Reddit Gone Wild - A Decade of Debauchery -  million +</td>
+</tr>
+<tr>
+<td>r/nsfw</td>
+<td><a href="#">/r/nsfw</a></td>
+<td>Not Safe for Work</td>
+</tr>
+<tr>
+<td>r/NSFW_GIF</td>
+<td><a href="#">/r/NSFW_GIF</a></td>
+<td>NSFW_GIF</td>
+</tr>
+<tr>
+<td>r/RealGirls</td>
+<td><a href="#">/r/RealGirls</a></td>
+<td>The Real Girls of Reddit</td>
+</tr>
+<tr>
+<td>r/ImGoingToHellForThis</td>
+<td><a href="#">/r/ImGoingToHellForThis</a></td>
+<td>Where school shooters post before they are CNN-famous</td>
+</tr>
+<tr>
+<td>r/holdthemoan</td>
+<td><a href="#">/r/holdthemoan</a></td>
+<td>r/holdthemoan: girls trying to get away with being naughty in socially risky situations</td>
+</tr>
+<tr>
+<td>r/BustyPetite</td>
+<td><a href="#">/r/BustyPetite</a></td>
+<td>Busty Petite</td>
+</tr>
+<tr>
+<td>r/cumsluts</td>
+<td><a href="#">/r/cumsluts</a></td>
+<td>The stickiest place on reddit!</td>
+</tr>
+<tr>
+<td>r/nsfw_gifs</td>
+<td><a href="#">/r/nsfw_gifs</a></td>
+<td>Satisfying your mom since 2010</td>
+</tr>
+<tr>
+<td>r/LegalTeens</td>
+<td><a href="#">/r/LegalTeens</a></td>
+<td>Legal Teens</td>
+</tr>
+<tr>
+<td>r/PetiteGoneWild</td>
+<td><a href="#">/r/PetiteGoneWild</a></td>
+<td>GoneWild for small/petite girls</td>
+</tr>
+<tr>
+<td>r/adorableporn</td>
+<td><a href="#">/r/adorableporn</a></td>
+<td>Adorable Porn</td>
+</tr>
+<tr>
+<td>r/GirlsFinishingTheJob</td>
+<td><a href="#">/r/GirlsFinishingTheJob</a></td>
+<td>GirlsFinishingTheJob</td>
+</tr>
+<tr>
+<td>r/Amateur</td>
+<td><a href="#">/r/Amateur</a></td>
+<td>Amateur Pics</td>
+</tr>
+<tr>
+<td>r/AsiansGoneWild</td>
+<td><a href="#">/r/AsiansGoneWild</a></td>
+<td>An outlet for Asian women to express their sexuality</td>
+</tr>
+<tr>
+<td>r/rule34</td>
+<td><a href="#">/r/rule34</a></td>
+<td>rule34</td>
+</tr>
+<tr>
+<td>r/BiggerThanYouThought</td>
+<td><a href="#">/r/BiggerThanYouThought</a></td>
+<td>Tits &lt;3</td>
+</tr>
+<tr>
+<td>r/porninfifteenseconds</td>
+<td><a href="#">/r/porninfifteenseconds</a></td>
+<td>Porn in Fifteen Seconds</td>
+</tr>
+<tr>
+<td>r/ass</td>
+<td><a href="#">/r/ass</a></td>
+<td>The Callipygian reddit</td>
+</tr>
+<tr>
+<td>r/TittyDrop</td>
+<td><a href="#">/r/TittyDrop</a></td>
+<td>Let dem titties drop!</td>
+</tr>
+<tr>
+<td>r/collegesluts</td>
+<td><a href="#">/r/collegesluts</a></td>
+<td>Slutty College Girls!</td>
+</tr>
+<tr>
+<td>r/pawg</td>
+<td><a href="#">/r/pawg</a></td>
+<td>Phat Ass White Girls</td>
+</tr>
+<tr>
+<td>r/HappyEmbarrassedGirls</td>
+<td><a href="#">/r/HappyEmbarrassedGirls</a></td>
+<td>Happy embarrassed girls bring great joy to everybody!</td>
+</tr>
+<tr>
+<td>r/NSFWFunny</td>
+<td><a href="#">/r/NSFWFunny</a></td>
+<td>Humorous, NSFW content</td>
+</tr>
+<tr>
+<td>r/milf</td>
+<td><a href="#">/r/milf</a></td>
+<td>The MILF Reddit</td>
+</tr>
+<tr>
+<td>r/OnOff</td>
+<td><a href="#">/r/OnOff</a></td>
+<td>When imagination just isn&#39;t enough</td>
+</tr>
+<tr>
+<td>r/hentai</td>
+<td><a href="#">/r/hentai</a></td>
+<td>Hentai</td>
+</tr>
+<tr>
+<td>r/LipsThatGrip</td>
+<td><a href="#">/r/LipsThatGrip</a></td>
+<td>LipsThatGrip : We&#39;ve got the grippiest lips</td>
+</tr>
+<tr>
+<td>r/porn</td>
+<td><a href="#">/r/porn</a></td>
+<td>You&#39;ll know it when you see it.</td>
+</tr>
+<tr>
+<td>r/Boobies</td>
+<td><a href="#">/r/Boobies</a></td>
+<td>Boobies</td>
+</tr>
+<tr>
+<td>r/celebnsfw</td>
+<td><a href="#">/r/celebnsfw</a></td>
+<td>Celebrity NSFW Photos</td>
+</tr>
+<tr>
+<td>r/Blowjobs</td>
+<td><a href="#">/r/Blowjobs</a></td>
+<td>Blowjobs</td>
+</tr>
+<tr>
+<td>r/GWCouples</td>
+<td><a href="#">/r/GWCouples</a></td>
+<td>Gonewild: Couples Edition</td>
+</tr>
+<tr>
+<td>r/nsfwhardcore</td>
+<td><a href="#">/r/nsfwhardcore</a></td>
+<td>NSFW Hardcore</td>
+</tr>
+<tr>
+<td>r/WatchItForThePlot</td>
+<td><a href="#">/r/WatchItForThePlot</a></td>
+<td>We&#39;re all about the Plot</td>
+</tr>
+<tr>
+<td>r/dirtysmall</td>
+<td><a href="#">/r/dirtysmall</a></td>
+<td>Little tits, big action action action!</td>
+</tr>
+<tr>
+<td>r/homemadexxx</td>
+<td><a href="#">/r/homemadexxx</a></td>
+<td>Homemade Porn Videos</td>
+</tr>
+<tr>
+<td>r/trashyboners</td>
+<td><a href="#">/r/trashyboners</a></td>
+<td>Maybe a true hot mess?</td>
+</tr>
+<tr>
+<td>r/nsfwcosplay</td>
+<td><a href="#">/r/nsfwcosplay</a></td>
+<td>For Cosplay Nudity and Sex</td>
+</tr>
+<tr>
+<td>r/gonewildcurvy</td>
+<td><a href="#">/r/gonewildcurvy</a></td>
+<td>GWC: Where redditors can flaunt their curves</td>
+</tr>
+<tr>
+<td>r/girlsinyogapants</td>
+<td><a href="#">/r/girlsinyogapants</a></td>
+<td>Girls In Yoga Pants</td>
+</tr>
+<tr>
+<td>r/juicyasians</td>
+<td><a href="#">/r/juicyasians</a></td>
+<td>Women of the East with a little extra oomph</td>
+</tr>
+<tr>
+<td>r/asstastic</td>
+<td><a href="#">/r/asstastic</a></td>
+<td>Where every day is hump day!</td>
+</tr>
+<tr>
+<td>r/palegirls</td>
+<td><a href="#">/r/palegirls</a></td>
+<td>Pale Girls: Porcelain-skinned beauties</td>
+</tr>
+<tr>
+<td>r/pussy</td>
+<td><a href="#">/r/pussy</a></td>
+<td>The happiest place on Earth!</td>
+</tr>
+<tr>
+<td>r/60fpsporn</td>
+<td><a href="#">/r/60fpsporn</a></td>
+<td>60fpsporn</td>
+</tr>
+<tr>
+<td>r/NSFW_Snapchat</td>
+<td><a href="#">/r/NSFW_Snapchat</a></td>
+<td>NSFW Snapchat</td>
+</tr>
+<tr>
+<td>r/curvy</td>
+<td><a href="#">/r/curvy</a></td>
+<td>/r/curvy: Buxom babes, voluptuous vixens, curvy cuties, plump peaches, hotties w/ hourglass figures</td>
+</tr>
+<tr>
+<td>r/freeuse</td>
+<td><a href="#">/r/freeuse</a></td>
+<td>freeuse - worlds where women are willing</td>
+</tr>
+<tr>
+<td>r/StraightGirlsPlaying</td>
+<td><a href="#">/r/StraightGirlsPlaying</a></td>
+<td>StraightGirlsPlaying</td>
+</tr>
+<tr>
+<td>r/gonewildplus</td>
+<td><a href="#">/r/gonewildplus</a></td>
+<td>Gone Wild, 30+ Year Olds!</td>
+</tr>
+<tr>
+<td>r/workgonewild</td>
+<td><a href="#">/r/workgonewild</a></td>
+<td>Gone Wild At Work</td>
+</tr>
+<tr>
+<td>r/anal</td>
+<td><a href="#">/r/anal</a></td>
+<td>Anal</td>
+</tr>
+<tr>
+<td>r/AsianHotties</td>
+<td><a href="#">/r/AsianHotties</a></td>
+<td>Women from the Orient to the Indian sub-continent!</td>
+</tr>
+<tr>
+<td>r/FestivalSluts</td>
+<td><a href="#">/r/FestivalSluts</a></td>
+<td>/r/FestivalSluts: If you know, you know.</td>
+</tr>
+<tr>
+<td>r/TinyTits</td>
+<td><a href="#">/r/TinyTits</a></td>
+<td>For all your small-breasted needs</td>
+</tr>
+<tr>
+<td>r/wifesharing</td>
+<td><a href="#">/r/wifesharing</a></td>
+<td>Wife Sharing and Hotwife Pictures and Videos (NSFW)</td>
+</tr>
+<tr>
+<td>r/thick</td>
+<td><a href="#">/r/thick</a></td>
+<td>Thick</td>
+</tr>
+<tr>
+<td>r/lesbians</td>
+<td><a href="#">/r/lesbians</a></td>
+<td>Lesbians: NSFW Photos and Gifs</td>
+</tr>
+<tr>
+<td>r/GodPussy</td>
+<td><a href="#">/r/GodPussy</a></td>
+<td>God Pussy- The best HD pussy pics on reddit</td>
+</tr>
+<tr>
+<td>r/MorbidReality</td>
+<td><a href="#">/r/MorbidReality</a></td>
+<td>The darkest recesses of humanity</td>
+</tr>
+<tr>
+<td>r/grool</td>
+<td><a href="#">/r/grool</a></td>
+<td>Grool = Girl Drool</td>
+</tr>
+<tr>
+<td>r/pornvids</td>
+<td><a href="#">/r/pornvids</a></td>
+<td>Porn Videos, Streaming Porn, Hard Sex</td>
+</tr>
+<tr>
+<td>r/gonewildstories</td>
+<td><a href="#">/r/gonewildstories</a></td>
+<td>Gonewild Stories</td>
+</tr>
+<tr>
+<td>r/gwcumsluts</td>
+<td><a href="#">/r/gwcumsluts</a></td>
+<td>Cum-covered Redditors</td>
+</tr>
+<tr>
+<td>r/GirlswithGlasses</td>
+<td><a href="#">/r/GirlswithGlasses</a></td>
+<td>Girls with Glasses (Some NSFW)</td>
+</tr>
+<tr>
+<td>r/bodyperfection</td>
+<td><a href="#">/r/bodyperfection</a></td>
+<td>Show us your definition of perfect.</td>
+</tr>
+<tr>
+<td>r/rearpussy</td>
+<td><a href="#">/r/rearpussy</a></td>
+<td>Pussy from the rear</td>
+</tr>
+<tr>
+<td>r/NSFW411</td>
+<td><a href="#">/r/NSFW411</a></td>
+<td>NSFW411</td>
+</tr>
+<tr>
+<td>r/quiver</td>
+<td><a href="#">/r/quiver</a></td>
+<td>Quiver: Shaking Orgasm GIFs &amp; Vids</td>
+</tr>
+<tr>
+<td>r/ginger</td>
+<td><a href="#">/r/ginger</a></td>
+<td>For all the ginger lovers out there</td>
+</tr>
+<tr>
+<td>r/redheads</td>
+<td><a href="#">/r/redheads</a></td>
+<td>redheads: because redder is better</td>
+</tr>
+<tr>
+<td>r/JizzedToThis</td>
+<td><a href="#">/r/JizzedToThis</a></td>
+<td>Show us what made you cum.</td>
+</tr>
+<tr>
+<td>r/BigBoobsGW</td>
+<td><a href="#">/r/BigBoobsGW</a></td>
+<td>Big Boobs Gonewild</td>
+</tr>
+<tr>
+<td>r/Stacked</td>
+<td><a href="#">/r/Stacked</a></td>
+<td>Stacked: For the Enjoyment of Topheavy Females</td>
+</tr>
+<tr>
+<td>r/Hotwife</td>
+<td><a href="#">/r/Hotwife</a></td>
+<td>Hotwife Lifestyle Subreddit</td>
+</tr>
+<tr>
+<td>r/whenitgoesin</td>
+<td><a href="#">/r/whenitgoesin</a></td>
+<td>When It Goes In: The First Moment of Pleasure</td>
+</tr>
+<tr>
+<td>r/TooCuteForPorn</td>
+<td><a href="#">/r/TooCuteForPorn</a></td>
+<td>Too cute for porn</td>
+</tr>
+<tr>
+<td>r/SexInFrontOfOthers</td>
+<td><a href="#">/r/SexInFrontOfOthers</a></td>
+<td>SexInFrontOfOthers</td>
+</tr>
+<tr>
+<td>r/gettingherselfoff</td>
+<td><a href="#">/r/gettingherselfoff</a></td>
+<td>Gifs and video of girls masturbating.</td>
+</tr>
+<tr>
+<td>r/darkjokes</td>
+<td><a href="#">/r/darkjokes</a></td>
+<td>Jokes by dark people, for dark people. Mayos get out!</td>
+</tr>
+<tr>
+<td>r/gonewildaudio</td>
+<td><a href="#">/r/gonewildaudio</a></td>
+<td>For Those Aroused By Sound</td>
+</tr>
+<tr>
+<td>r/18_19</td>
+<td><a href="#">/r/18_19</a></td>
+<td>Girls 18 and 19 yo</td>
+</tr>
+<tr>
+<td>r/bigasses</td>
+<td><a href="#">/r/bigasses</a></td>
+<td>Big asses on beautiful ladies</td>
+</tr>
+<tr>
+<td>r/boobbounce</td>
+<td><a href="#">/r/boobbounce</a></td>
+<td>Titties in sweet, sweet motion.</td>
+</tr>
+<tr>
+<td>r/creampies</td>
+<td><a href="#">/r/creampies</a></td>
+<td>Payload delivery</td>
+</tr>
+<tr>
+<td>r/porn_gifs</td>
+<td><a href="#">/r/porn_gifs</a></td>
+<td>Hard,Sexy,Porn Gifs</td>
+</tr>
+<tr>
+<td>r/theratio</td>
+<td><a href="#">/r/theratio</a></td>
+<td>hips:waist</td>
+</tr>
+<tr>
+<td>r/tightdresses</td>
+<td><a href="#">/r/tightdresses</a></td>
+<td>/r/tightdresses - Hot babes in tight dresses</td>
+</tr>
+<tr>
+<td>r/Hotchickswithtattoos</td>
+<td><a href="#">/r/Hotchickswithtattoos</a></td>
+<td>Hot Chicks With Tattoos</td>
+</tr>
+<tr>
+<td>r/burstingout</td>
+<td><a href="#">/r/burstingout</a></td>
+<td>For pictures of women whose tops cannot contain their assets</td>
+</tr>
+<tr>
+<td>r/facedownassup</td>
+<td><a href="#">/r/facedownassup</a></td>
+<td>Girls with their face down and ass up in the air.</td>
+</tr>
+<tr>
+<td>r/BreedingMaterial</td>
+<td><a href="#">/r/BreedingMaterial</a></td>
+<td>For Fertility Goddesses</td>
+</tr>
+<tr>
+<td>r/GoneWildTube</td>
+<td><a href="#">/r/GoneWildTube</a></td>
+<td>Gonewild Tube - Amateur &#39;Gonewild&#39; NSFW Videos</td>
+</tr>
+<tr>
+<td>r/altgonewild</td>
+<td><a href="#">/r/altgonewild</a></td>
+<td>Alternative Gone Wild</td>
+</tr>
+<tr>
+<td>r/O_Faces</td>
+<td><a href="#">/r/O_Faces</a></td>
+<td>&#39;O&#39; Faces. Faces of Ecstasy.</td>
+</tr>
+<tr>
+<td>r/amateurcumsluts</td>
+<td><a href="#">/r/amateurcumsluts</a></td>
+<td>Amateur Cumsluts</td>
+</tr>
+<tr>
+<td>r/hugeboobs</td>
+<td><a href="#">/r/hugeboobs</a></td>
+<td>Huge Boobs: for when more than a handful is just getting started</td>
+</tr>
+<tr>
+<td>r/SheLikesItRough</td>
+<td>[/r/SheLikesItRough(#)</td>
+<td>SheLikesItRough</td>
+</tr>
+<tr>
+<td>r/suicidegirls</td>
+<td><a href="#">/r/suicidegirls</a></td>
+<td>SuicideGirls.com on Reddit</td>
+</tr>
+<tr>
+<td>r/CuteLittleButts</td>
+<td><a href="#">/r/CuteLittleButts</a></td>
+<td>Cute Little Butts</td>
+</tr>
+<tr>
+<td>r/tipofmypenis</td>
+<td><a href="#">/r/tipofmypenis</a></td>
+<td>TOMP - To find the unfindable source</td>
+</tr>
+<tr>
+<td>r/RandomActsOfBlowJob</td>
+<td><a href="#">/r/RandomActsOfBlowJob</a></td>
+<td>RAOB. Matching mouths and members</td>
+</tr>
+<tr>
+<td>r/fitgirls</td>
+<td><a href="#">/r/fitgirls</a></td>
+<td>Fit Girls</td>
+</tr>
+<tr>
+<td>r/Upskirt</td>
+<td><a href="#">/r/Upskirt</a></td>
+<td>Upskirt Fun</td>
+</tr>
+</tbody></table>
+</details> 
+
+
+<a href="#memes" id="memes" style="color: inherit; text-decoration: none;">
+  <h3>Memes</h3>
+</a>
+<details>
+<summary>The list of popular nsfw memes subreddit.</summary>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Subreddit</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r/SexuallyExplicitMemes</td>
+<td><a href="https://www.reddit.com/r/SexuallyExplicitMemes/">/r/SexuallyExplicitMemes</a></td>
+<td>SexuallyExplicitMemes</td>
+</tr>
+<tr>
+<td>NSFWFunny</td>
+<td><a href="https://www.reddit.com/r/NSFWFunny/">/r/NSFWFunny</a></td>
+<td>NSFWFunny</td>
+</tr>
+<tr>
+<td>DeepFriedHentai</td>
+<td><a href="https://www.reddit.com/r/DeepFriedHentai/">/r/DeepFriedHentai</a></td>
+<td>DeepFriedHentai</td>
+</tr>
+<tr>
+<td>PornMemes</td>
+<td><a href="https://www.reddit.com/r/PornMemes/">/r/PornMemes</a></td>
+<td>PornMemes</td>
+</tr>
+<tr>
+<td>hentaimemes</td>
+<td><a href="https://www.reddit.com/r/hentaimemes/">/r/hentaimemes</a></td>
+<td>hentaimemes</td>
+</tr>
+<tr>
+<td>hentaidankmemes</td>
+<td><a href="https://www.reddit.com/r/hentaidankmemes/">/r/hentaidankmemes</a></td>
+<td>hentaidankmemes</td>
+</tr>
+<tr>
+<td>Hentai_memes</td>
+<td><a href="https://www.reddit.com/r/Hentai_memes/">/r/Hentai_memes</a></td>
+<td>Hentai_memes</td>
+</tr>
+<tr>
+<td>NsfwAnimemes</td>
+<td><a href="https://www.reddit.com/r/NsfwAnimemes/">/r/NsfwAnimemes</a></td>
+<td>NsfwAnimemes</td>
+</tr>
+<tr>
+<td>PornoMemes</td>
+<td><a href="https://www.reddit.com/r/PornoMemes/">/r/PornoMemes</a></td>
+<td>PornoMemes</td>
+</tr>
+</tbody></table>
+</details> 
+
+
+
+<a href="#results" id="results" style="color: inherit; text-decoration: none;">
+  <h2>Results:</h2>
+</a>
+<p><code>no_random</code> is default false and will return a single object.
+Otherwise it will return a list (25 posts) if <code>no_random</code> is true.</p>
+<p>Useful keys:</p>
+<ul>
+<li><strong>res.data</strong> parent object</li>
+<li><strong>res.data.url_overridden_by_dest</strong> actionable image/videos/gifs</li>
+<li><strong>res.data.permalink</strong> actionable links</li>
+<li><strong>res.data.title</strong> title post</li>
+<li><strong>res.data.subreddit_name_prefixed</strong> name of the subreddit. eg: /r/ahegao</li>
+<li><strong>res.data.score</strong> number of score</li>
+<li><strong>res.data.subreddit_subscribers</strong> number of subscribers</li>
+<li><strong>res.data.num_comments</strong> number of comment in a post related</li>
+<li><strong>res.data.ups</strong> number of upvotes</li>
+<li><del><strong>res.data.downs</strong> number of downvotes</del></li>
+<li>..and more, see below:</li>
+</ul>
+<pre><code class="language-js"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-7">kind</span><span class="hl-1">: </span><span class="hl-4">&#39;t3&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-7">data</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-7">approved_at_utc</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">subreddit</span><span class="hl-1">: </span><span class="hl-4">&#39;Atago&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">selftext</span><span class="hl-1">: </span><span class="hl-4">&#39;&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">author_fullname</span><span class="hl-1">: </span><span class="hl-4">&#39;t2_13mkmqwt&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">saved</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">mod_reason_title</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">gilded</span><span class="hl-1">: </span><span class="hl-8">0</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">clicked</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">title</span><span class="hl-1">: </span><span class="hl-4">&#39;Atagos big behind&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">link_flair_richtext</span><span class="hl-1">: [],</span><br/><span class="hl-1">    </span><span class="hl-7">subreddit_name_prefixed</span><span class="hl-1">: </span><span class="hl-4">&#39;r/Atago&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">hidden</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">pwls</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">link_flair_css_class</span><span class="hl-1">: </span><span class="hl-4">&#39;&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">downs</span><span class="hl-1">: </span><span class="hl-8">0</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">thumbnail_height</span><span class="hl-1">: </span><span class="hl-8">78</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">top_awarded_type</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">hide_score</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">name</span><span class="hl-1">: </span><span class="hl-4">&#39;t3_oh8uqe&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">quarantine</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">link_flair_text_color</span><span class="hl-1">: </span><span class="hl-4">&#39;dark&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">upvote_ratio</span><span class="hl-1">: </span><span class="hl-8">0.99</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">author_flair_background_color</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">subreddit_type</span><span class="hl-1">: </span><span class="hl-4">&#39;public&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">ups</span><span class="hl-1">: </span><span class="hl-8">534</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">total_awards_received</span><span class="hl-1">: </span><span class="hl-8">3</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">media_embed</span><span class="hl-1">: {},</span><br/><span class="hl-1">    </span><span class="hl-7">thumbnail_width</span><span class="hl-1">: </span><span class="hl-8">140</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">author_flair_template_id</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">is_original_content</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">user_reports</span><span class="hl-1">: [],</span><br/><span class="hl-1">    </span><span class="hl-7">secure_media</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">is_reddit_media_domain</span><span class="hl-1">: </span><span class="hl-0">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">is_meta</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">category</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">secure_media_embed</span><span class="hl-1">: {},</span><br/><span class="hl-1">    </span><span class="hl-7">link_flair_text</span><span class="hl-1">: </span><span class="hl-4">&#39;Atago&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">can_mod_post</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">score</span><span class="hl-1">: </span><span class="hl-8">534</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">approved_by</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">is_created_from_ads_ui</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">author_premium</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">thumbnail</span><span class="hl-1">: </span><span class="hl-4">&#39;https://b.thumbs.redditmedia.com/Rsh6Og-AsGTpfsAPlR1OOCr4voR3CAL5X0fX1IihAMM.jpg&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">edited</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">author_flair_css_class</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">author_flair_richtext</span><span class="hl-1">: [],</span><br/><span class="hl-1">    </span><span class="hl-7">gildings</span><span class="hl-1">: {},</span><br/><span class="hl-1">    </span><span class="hl-7">post_hint</span><span class="hl-1">: </span><span class="hl-4">&#39;image&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">content_categories</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">is_self</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">mod_note</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">created</span><span class="hl-1">: </span><span class="hl-8">1625907932</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">link_flair_type</span><span class="hl-1">: </span><span class="hl-4">&#39;text&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">wls</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">removed_by_category</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">banned_by</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">author_flair_type</span><span class="hl-1">: </span><span class="hl-4">&#39;text&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">domain</span><span class="hl-1">: </span><span class="hl-4">&#39;i.redd.it&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">allow_live_comments</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">selftext_html</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">likes</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">suggested_sort</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">banned_at_utc</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">url_overridden_by_dest</span><span class="hl-1">: </span><span class="hl-4">&#39;https://i.redd.it/aabldcpvbaa71.jpg&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">view_count</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">archived</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">no_follow</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">is_crosspostable</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">pinned</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">over_18</span><span class="hl-1">: </span><span class="hl-0">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">preview</span><span class="hl-1">: { </span><span class="hl-7">images</span><span class="hl-1">: [</span><span class="hl-9">Array</span><span class="hl-1">], </span><span class="hl-7">enabled</span><span class="hl-1">: </span><span class="hl-0">true</span><span class="hl-1"> },</span><br/><span class="hl-1">    </span><span class="hl-7">all_awardings</span><span class="hl-1">: [ [</span><span class="hl-9">Object</span><span class="hl-1">], [</span><span class="hl-9">Object</span><span class="hl-1">] ],</span><br/><span class="hl-1">    </span><span class="hl-7">awarders</span><span class="hl-1">: [],</span><br/><span class="hl-1">    </span><span class="hl-7">media_only</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">link_flair_template_id</span><span class="hl-1">: </span><span class="hl-4">&#39;15f3d18e-14cc-11eb-93fc-0e629d02b757&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">can_gild</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">spoiler</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">locked</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">author_flair_text</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">treatment_tags</span><span class="hl-1">: [],</span><br/><span class="hl-1">    </span><span class="hl-7">visited</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">removed_by</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">num_reports</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">distinguished</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">subreddit_id</span><span class="hl-1">: </span><span class="hl-4">&#39;t5_qdbs8&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">mod_reason_by</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">removal_reason</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">link_flair_background_color</span><span class="hl-1">: </span><span class="hl-4">&#39;&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">id</span><span class="hl-1">: </span><span class="hl-4">&#39;oh8uqe&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">is_robot_indexable</span><span class="hl-1">: </span><span class="hl-0">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">report_reasons</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">author</span><span class="hl-1">: </span><span class="hl-4">&#39;verlene10&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">discussion_type</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">num_comments</span><span class="hl-1">: </span><span class="hl-8">5</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">send_replies</span><span class="hl-1">: </span><span class="hl-0">true</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">whitelist_status</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">contest_mode</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">mod_reports</span><span class="hl-1">: [],</span><br/><span class="hl-1">    </span><span class="hl-7">author_patreon_flair</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">author_flair_text_color</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">permalink</span><span class="hl-1">: </span><span class="hl-4">&#39;/r/Atago/comments/oh8uqe/atagos_big_behind/&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">parent_whitelist_status</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">stickied</span><span class="hl-1">: </span><span class="hl-0">false</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">url</span><span class="hl-1">: </span><span class="hl-4">&#39;https://i.redd.it/aabldcpvbaa71.jpg&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">subreddit_subscribers</span><span class="hl-1">: </span><span class="hl-8">24088</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">created_utc</span><span class="hl-1">: </span><span class="hl-8">1625879132</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">num_crossposts</span><span class="hl-1">: </span><span class="hl-8">1</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">media</span><span class="hl-1">: </span><span class="hl-0">null</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-7">is_video</span><span class="hl-1">: </span><span class="hl-0">false</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
+</code></pre>
+
+<a href="#todo" id="todo" style="color: inherit; text-decoration: none;">
+  <h2>Todo</h2>
+</a>
+<p>Since i&#39;ve using this wrapper on Node.js application, hence the other language is not supported yet.</p>
+<p>Feature support:</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Hentai</li>
+<li><input checked="" disabled="" type="checkbox"> Irl</li>
+<li><input checked="" disabled="" type="checkbox"> Memes</li>
+</ul>
+<p>Multilingual support:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Python modules</li>
+<li><input disabled="" type="checkbox"> Deno wrapper</li>
+<li><input disabled="" type="checkbox"> Ruby gem</li>
+</ul>
+
+<a href="#legal" id="legal" style="color: inherit; text-decoration: none;">
+  <h2>Legal</h2>
+</a>
+<p>This tool can be freely copied, modified, altered, distributed without any attribution whatsoever. However, if you feel
+like this tool deserves an attribution, mention it. It won&#39;t hurt anybody :)</p>
+<p>Please, read the <a href="LICENSE">license terms</a>. Don&#39;t worry, it can be read in less than 30 seconds, unless you have some
+sort of reading disability - in that case, I&#39;m wondering why you&#39;re still reading this text. Really. Stop. Please. I
+mean, seriously. Why are you still reading?</p>
+
+<a href="#pronunciation" id="pronunciation" style="color: inherit; text-decoration: none;">
+  <h2>Pronunciation</h2>
+</a>
+<p><a href="https://www.localeplanet.com/java/id-ID/index.html"><code>id_ID</code></a> • <strong>/ca·bul/</strong> — sange dan kotor / melanggar kesopanan <em>(?)</em> offensive in a sexual way.</p>
+
+<a href="#acknowledgements" id="acknowledgements" style="color: inherit; text-decoration: none;">
+  <h2>Acknowledgements</h2>
+</a>
+<p>Since this tool includes some contributions, and I&#39;m not an asshole, I&#39;ll publically thank the following users for their
+help:</p>
+<ul>
+<li><a href="https://www.reddit.com/r/hentai">/r/Hentai</a> actionable endpoints <a href="#hentai">#hentai</a></li>
+<li><a href="https://www.reddit.com/r/NSFW411">/r/NSFW411</a> actionable endpoints <a href="#irl">#irl</a></li>
+</ul>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-class"><a href="classes/Cabul.html" class="tsd-kind-icon">Cabul</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li><li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
