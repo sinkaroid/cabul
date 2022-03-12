@@ -5,7 +5,7 @@
 Cabul guide you to the NSFW world of reddit.
 
 This module exist as a directory of all popular NSFW-related subreddits.
-The endpoints that cabul has is hand-picked and curated by the whole community, so the data taken is always wholesome, and easy to use check your intelisense.
+The endpoints that cabul handle is hand-picked and curated by the whole community, data taken is always wholesome, and easy to use check your intelisense.
 
 <a href="#table-of-subreddit">Table of Subreddit</a> •
 <a href="https://sinkaroid.github.io/cabul">Documentation</a> •
