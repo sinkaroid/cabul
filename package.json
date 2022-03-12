@@ -1,9 +1,9 @@
 {
   "name": "cabul",
   "description": "This wrapper exist as a directory of popular nsfw-related subreddit.",
-  "version": "0.0.21",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "version": "0.0.22",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
   "files": [
     "build/**/**"
   ],
