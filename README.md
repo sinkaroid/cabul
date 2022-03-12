@@ -32,14 +32,6 @@ The endpoints that cabul has is hand-picked and curated by the whole community, 
 
 `npm install cabul / yarn add cabul`
 
-## Improvements
-Starting from 0.0.16.dev, you will get more degenerate than the previous version, hence you should upgrade to the latest version.
-- You can sort by the popularity of posts
-- Adding a bunch of endpoints support
-- You can set it to 25 list instead of 1 object
-- Not just hentai, now `irl` and `memes` has been merged to cabul!
-- Arbitrary GET from the API will return as well
-  - You can easily submit a pull request for adding new subreddit support
 
 ## Example
 **Here I'll show you how to import either `hentai`, `irl`, or `meme`**
