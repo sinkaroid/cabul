@@ -11,6 +11,6 @@ npm run build && npm run start
 ts-node index.ts
 
 ```
-
+- Demo: https://cabul-reddit.herokuapp.com
 - Endpoints: "/r", "/reddit"  
-    - Example: "/reddit?subreddit=hentai"
+    - Example: https://cabul-reddit.herokuapp.com/reddit?subreddit=hentai
