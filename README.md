@@ -14,6 +14,8 @@ The endpoints that cabul handle is hand-picked and curated by the whole communit
 
 ----
 
+This wrapper is for NodeJS, If you want to build web server on your own instance check it out the proxy branch: https://github.com/sinkaroid/cabul/tree/proxy
+
 ## Features
 
 - **Featureful**: resolves and interacts with ease
