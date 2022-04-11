@@ -1,0 +1,34 @@
+{
+  "name": "cabul-rest",
+  "version": "0.0.1",
+  "description": "Proxy API for reddit",
+  "main": "build/index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "phin": "^3.6.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "typescript": "^4.6.3",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "eslint": "^7.32.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
+    "postinstall": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinkaroid/cabul.git"
+  },
+  "keywords": ["reddit", "proxy", "api"],
+  "author": "sinkaroid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sinkaroid/cabul/issues"
+  },
+  "homepage": "https://github.com/sinkaroid/cabul#readme"
+}
