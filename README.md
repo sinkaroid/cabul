@@ -101,7 +101,7 @@ Sometime specific subreddit is not available or maybe is ban, it will throw you 
 error.
 
 ### Hentai
-<details>
+
 <summary>The list of popular hentai subreddit.</summary>
 
 | Name             | Subreddit                                                              | Description                                                                                                              |
@@ -169,10 +169,9 @@ error.
 | overwatch        | [/r/Overwatch_Porn](https://www.reddit.com/r/Overwatch_Porn)           | Overwatch-themed porn                                                                                                    |
 | twob             | [/r/2Booty](https://www.reddit.com/r/2Booty)                           | NieR: Automata-themed porn                                                                                               |
 | kanmusunights    | [/r/KanMusuNights](https://www.reddit.com/r/2Booty)                    | Kantai Collection-themed porn                                                                                            |
-</details> 
 
 ### IRL
-<details>
+
 <summary>The list of popular Irl nsfw subreddit.</summary>
 
 | Name                    | Subreddit                     | Description                                                                                         |
@@ -282,10 +281,10 @@ error.
 | r/RandomActsOfBlowJob   | [/r/RandomActsOfBlowJob](#)   | RAOB. Matching mouths and members                                                                   |
 | r/fitgirls              | [/r/fitgirls](#)              | Fit Girls                                                                                           |
 | r/Upskirt               | [/r/Upskirt](#)               | Upskirt Fun                                                                                         |
-</details> 
+ 
 
 ### Memes
-<details>
+
 <summary>The list of popular nsfw memes subreddit.</summary>
 
 | Name                    | Subreddit                                                                   | Description           |
@@ -299,7 +298,7 @@ error.
 | Hentai_memes            | [/r/Hentai_memes](https://www.reddit.com/r/Hentai_memes/)                   | Hentai_memes          |
 | NsfwAnimemes            | [/r/NsfwAnimemes](https://www.reddit.com/r/NsfwAnimemes/)                   | NsfwAnimemes          | 
 | PornoMemes              | [/r/PornoMemes](https://www.reddit.com/r/PornoMemes/)                       | PornoMemes            |
-</details> 
+ 
 
 
 ## Results:
